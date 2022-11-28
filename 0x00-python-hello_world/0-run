@@ -1,2 +1,2 @@
 #!/bin/bash
-export VAR=PYFILE="main.py"
+export VAR=PYFILE="~/alx-higher_level_programming/0x00-python-hello_world/main.py"
