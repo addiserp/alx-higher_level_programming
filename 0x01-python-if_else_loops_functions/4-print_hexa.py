@@ -1,4 +1,5 @@
 #!/usr/bin/python3
-for i in range(1,99):
+for i in range(1, 99):
     print('{} = {:x}'.format(i, i), end='\n')
+
 
