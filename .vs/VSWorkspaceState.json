@@ -1,9 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\0x00-python-hello_world",
-    "\\0x01-python-if_else_loops_functions"
+    ""
   ],
-  "SelectedNode": "\\0x01-python-if_else_loops_functions\\102-magic_calculation.py",
+  "SelectedNode": "\\0x07-python-test_driven_development",
   "PreviewInSolutionExplorer": false
 }
