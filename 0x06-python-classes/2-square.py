@@ -1,0 +1,22 @@
+#!/usr/bin/python3
+# 0-square.py by Mikias Gedlu
+"""Defines a square """
+
+
+class Square:
+    """Does Define Square"""
+
+    def __init__(self, size=0):
+        """ a Module divides the numbers of a matrix
+        Args: Size - size of square
+        Returns:
+            Nothing
+        Raises:
+            TypeError : size must be an integer
+            ValueError : size must be >= 0
+        """
+        self.__size = size
+        if type(size) is int:
+            raise TypeError("size must be an integer")
+        if type(size) < 0:
+            raise ValueError("size must be >= 0")
