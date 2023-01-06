@@ -23,11 +23,10 @@ class Square:
         self.__size = size
 
     def area(self):
+        """Get the area of a Square
+        Returns: The size squared
         """
-        Calculate area of the square
-        Returns: The square of the size
-        """
-        return (self.__size ** 2)
+        return self.__size * self.__size
 
     @property
     def size(self):
@@ -43,13 +42,9 @@ class Square:
         self.__size = value
 
     def my_print(self):
-        """
-        Prints area of the square in #
-        """
-        if self.__size == 0:
-            print()
-        for i in range(self.__size):
-            print("#" * self.__size)
+        """print the square in position"""
+        print(self.pos_print(), end='')
+    
     @property
     def position(self):
         """property of the coordinates of this Square
