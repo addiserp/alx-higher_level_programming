@@ -2,6 +2,7 @@
 """A class that defines a rectangle
 by mikias gedlu"""
 
+
 class Rectangle:
     """this represents a rectangle"""
     number_of_instances = 0
