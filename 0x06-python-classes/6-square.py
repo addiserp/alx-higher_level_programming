@@ -6,21 +6,17 @@
 class Square:
     """Does Define Square"""
 
-    def __init__(self, size=0):
-        """ a Module divides the numbers of a matrix
-        Args: Size - size of square
-        Returns:
-            Nothing
-        Raises:
-            TypeError : size must be an integer
-            ValueError : size must be >= 0
+    def __init__(self, size=0, position=(0, 0)):
+        """Create a Square
+        Args:
+            size: length of a side of Square
+            position: where the square is (coordinates)
         """
+        self.size = size
+        self.position = position
 
-        if type(size) is not int:
-            raise TypeError("size must be an integer")
-        if size < 0:
-            raise ValueError("size must be >= 0")
-        self.__size = size
+    def __str__(self):
+        self.my_print()
 
     def area(self):
         """Get the area of a Square
