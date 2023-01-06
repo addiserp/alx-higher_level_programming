@@ -6,7 +6,7 @@
 class Square:
     """Does Define Square"""
     
-    def Square(size):
+    def Square(self, size):
         """ a Module divides the numbers of a matrix
         Args: Size - size of square
         Returns:
