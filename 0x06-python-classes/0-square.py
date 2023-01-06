@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 # 0-square.py by Mikias Gedlu
-""" this Function test a class square with empty """
+"""Defines a square """
+
+
 class Square:
-    """ this Function test a class square with empty #
+    """Does nothing"""
     pass
