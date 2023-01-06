@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""my square module."""
-
+"""my square module. 
+My mikias gedlu."""
 
 class Square:
     """define a Square."""
@@ -87,7 +87,7 @@ class Square:
             pos += "\n"
         return pos
 
-        def area(self):
+    def area(self):
         """ the area of square
         Returns:
             size * size

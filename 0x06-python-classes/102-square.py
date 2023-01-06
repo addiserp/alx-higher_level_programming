@@ -2,6 +2,7 @@
 """My square module by mikias gedlu"""
 
 class Square:
+
     """defines a square bonus"""
 
     def __init__(self, size=0):
