@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""my square module. 
-My mikias gedlu."""
+"""my bonus square module. by mikias gedlu"""
+
 
 class Square:
     """define a Square."""
@@ -68,11 +68,14 @@ class Square:
             raise TypeError('position must be a tuple of 2 positive integers')
         self.__position = value
 
-    def my_print(self):
-        """print square."""
-        print(self.pos_print(), end="")
+    def area(self):
+        """ the area of square
+        Returns:
+            size * size
+        """
+        return self.__size * self.__size
 
-        def pos_print(self):
+    def pos_print(self):
         """returns the printed square with position"""
         pos = ""
         if not self.size:
@@ -87,9 +90,6 @@ class Square:
             pos += "\n"
         return pos
 
-    def area(self):
-        """ the area of square
-        Returns:
-            size * size
-        """
-        return self.__size * self.__size
+    def my_print(self):
+        """print square."""
+        print(self.pos_print(), end="")
