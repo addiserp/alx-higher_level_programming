@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """ this Function test a class square with empty """
-class square():
-    
-    def square:
+class Square:
     """ this Function test a class square with empty #
     pass
