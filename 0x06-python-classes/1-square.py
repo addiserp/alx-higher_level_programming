@@ -4,13 +4,14 @@
 
 
 class Square:
-    """Does nothing"""
-    pass
+    """Does Define Square"""
+    
     def Square(size):
         """ a Module divides the numbers of a matrix
-        Args:
-        Size: Size of square
+        Args: Size - size of square
         Returns:
             Nothing
         Raises:
-            Nothing
+            Nothing 
+        """
+        self.__size = size
