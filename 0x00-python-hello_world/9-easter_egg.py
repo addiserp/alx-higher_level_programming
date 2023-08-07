@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
-var = "The Zen of Python, by Tim Peters"
-
-print(var[:32] + "\n")
+import this
+import codecs
+print(codecs.decode(this.s, 'rot13')[0:32] + "\n")
