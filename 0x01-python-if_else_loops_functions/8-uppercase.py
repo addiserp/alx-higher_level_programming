@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# change to Uppercase 
+# change to Uppercase
 def uppercase(str):
     for i in range(len(str)):
         j = ord(str[i])
