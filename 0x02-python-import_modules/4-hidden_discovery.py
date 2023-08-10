@@ -6,5 +6,4 @@ if __name__ == "__main__":
     for i in listname:
         if i[:2] != "__":
             print(i)
-
             
