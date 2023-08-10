@@ -8,4 +8,3 @@ if __name__ == "__main__":
     for i in range(strcont):
         sum += int(sys.argv[i + 1])
     print(sum)
-
