@@ -1,8 +1,12 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    if not roman_string or not isinstance(roman_string, str) or not roman_string.isupper():
+    if not roman_string:
         return 0
-    r_dict = {"I": 1, "IV": 4, "V": 5, "IX": 9, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
+    if not isinstance(roman_string, str) or not roman_string.isupper():
+        return 0
+    r_dict = {
+            "I": 1, "IV": 4, "V": 5, "IX": 9, "X": 10,
+            "L": 50, "C": 100, "D": 500, "M": 1000}
     outp = 0
     temp = list(roman_string)
     # Concat 4 and 9s
