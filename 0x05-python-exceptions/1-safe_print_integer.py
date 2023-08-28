@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 # a function that prints an integer with "{:d}".format().
-def safe_print_integer(value):
+def safe_print_integer(v):
     try:
-        print("{:d}".format(value))
+        print("{:d}".format(v))
         return True
     except:
         return False
