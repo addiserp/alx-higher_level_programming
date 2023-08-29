@@ -2,6 +2,7 @@
 """module for a singly linked list
 by mikias gedlu"""
 
+
 class Node:
     """"defines a node"""
 
