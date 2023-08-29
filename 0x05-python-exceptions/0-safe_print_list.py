@@ -6,8 +6,7 @@ def safe_print_list(my_list=[], x=0):
         try:
             print(f"{my_list[i]}", end="")
             result += 1
-        except Exception:
-            print("other Error")
+        except IndexError:
+            print("index Error")
             break
-    print()
     return (result)
