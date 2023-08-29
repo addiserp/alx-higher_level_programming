@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """My square module by mikias gedlu"""
 
+
 class Square:
 
     """defines a square bonus"""
