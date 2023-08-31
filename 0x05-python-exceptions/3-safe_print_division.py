@@ -3,10 +3,8 @@
 def safe_print_division(a, b):
     try:
         val = a / b
-    except (ZeroDivisionError, TypeError):
-        False
-    except IndexError:
-        print("out of range")
+    except ZeroDivisionError:
+        val = None
     finally:
         print('Inside result: {}'.format(val))
 
