@@ -11,7 +11,7 @@ def list_division(my_list_1, my_list_2, list_length):
         except TypeError:
             print('wrong val type')
         except IndexError:
-            print('val out of range')
+            print('out of range')
         finally:
             divs.append(val)
 
