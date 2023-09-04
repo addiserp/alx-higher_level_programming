@@ -9,7 +9,7 @@ class Rectangle:
     number_of_instances = 0
     print_symbol = "#"
 
-    def __init__(self, width=0, height=0, print_symbol="#"):
+    def __init__(self, width=0, height=0):
         """Initializing this rectangle class
         Args:
             width: represents the width of the rectangle
@@ -21,17 +21,6 @@ class Rectangle:
         self.width = width
         self.height = height
         Rectangle.number_of_instances += 1
-        Rectangle.print_symbol = print_symbol
-
-    @property
-    def print_symbol(self):
-        """retrieves print_symbol attribute"""
-        return self.__print_symbol
-
-    @print_symbol.setter
-    def print_symbol(self, value):
-        """sets width attribute"""
-        self.__print_symbol = value
 
     @property
     def width(self):
