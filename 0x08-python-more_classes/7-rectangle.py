@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-# 4-square.py by Mikias Gedlu
-"""Defines a Rectangle """
+# 7-square.py
+"""A class that defines a rectangle
+by mikias gedlu"""
 
 
 class Rectangle:
-    """Does Define Rectangle"""
     """this represents a rectangle"""
     number_of_instances = 0
     print_symbol = "#"
@@ -67,15 +67,18 @@ class Rectangle:
         rectangle = ""
         for column in range(self.__height):
             for row in range(self.__width):
-                rectangle += "#"
+                try:
+                    rectangle += str(self.print_symbol)
+                except Exception:
+                    rectangle += type(self).print_symbol
             if column < self.__height - 1:
                 rectangle += "\n"
         return (rectangle)
 
     def __repr__(self):
+        """returns a string representation of the rectangle"""
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
     def __del__(self):
         """prints a message for every object that is deleted"""
-        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
