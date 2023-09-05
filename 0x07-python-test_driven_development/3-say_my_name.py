@@ -3,6 +3,8 @@
 3-say_my_name.py by Mikias Gedlu
 This module is composed by a function prints a message
 """
+
+
 def say_my_name(first_name, last_name=""):
 
     """ Prints "My name is <first name> <last name>"
