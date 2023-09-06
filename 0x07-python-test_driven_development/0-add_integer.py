@@ -1,3 +1,10 @@
+#!/usr/bin/python3
+"""
+2-matrix_divided.py by Mikias Gedlu
+This module that adds 2 integers.
+"""
+
+
 def add_integer(a, b=98):
     """ test driven test by adding two numbers
     Args:
