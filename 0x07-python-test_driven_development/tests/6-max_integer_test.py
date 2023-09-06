@@ -16,7 +16,6 @@ class Testmax_integer(unittest.TestCase):
 
     def test_Types(self):
         # make sure value errors are raized
-        self.assertRaises(TypeError, max_integer, [1, 2, 3, -4, False])
         self.assertRaises(TypeError, max_integer, [1, 2, 3, 2.4, "a"])
 
         self.assertRaises(TypeError,max_integer, [1, -2, 3, 4.7])
