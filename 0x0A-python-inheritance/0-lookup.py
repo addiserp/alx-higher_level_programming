@@ -5,6 +5,7 @@ attributes and methods of an object:"""
 
 
 def lookup(obj):
+    """ a lookup function"""
     nlist = []
     nlist = dir(obj)
     return nlist
