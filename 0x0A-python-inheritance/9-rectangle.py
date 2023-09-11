@@ -9,8 +9,8 @@ class Rectangle(BaseGeometry):
     def __init__(self, width, height):
 
         """a function Rectangle that intialize width & height."""
-        self.integer_validator("width", width)
-        self.integer_validator("height", height)
+        super().integer_validator("width", width)
+        super().integer_validator("height", height)
         self.__width = width
         self.__height = height
 
@@ -28,5 +28,5 @@ class Rectangle(BaseGeometry):
         """presents a diagram of the rectangle defined for an object"""
         if self.__width == 0 or self.__height == 0:
             return ("")
-        rectangle = "[Rectangle] {}/{}".format(self.__width, self.__height)
-        return (rectangle)
+        name = str(self.__class__.__name__)
+        return "[{}] {}/{}".format(name, self.__width, self.__height)
