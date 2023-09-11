@@ -6,7 +6,7 @@ an instance of the specified class ; otherwise False."""
 
 def is_same_class(obj, a_class):
     """ a is_same_class cheaker function"""
-    if obj is a_class:
+    if type(obj) == a_class:
         return True
     else:
         return False
