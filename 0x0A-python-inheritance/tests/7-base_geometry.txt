@@ -47,24 +47,6 @@ Checking for integer < 0;
           ...
           ValueError: integer must be greater than 0
 
-Checking for no arguments to integer_validator:
-	  >>> b.integer_validator()
-	  Traceback (most recent call last):
-          ...
-	  TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
-
-Checking for only 1 argument to integer_validator:
-	  >>> b.integer_validator("integer")
-	  Traceback (most recent call last):
-          ...
-	  TypeError: integer_validator() missing 1 required positional argument: 'value'
-
-Checking for too many arguments:
-	  >>> b.integer_validator("integer", 1, 2)
-	  Traceback (most recent call last):
-          ...
-	  TypeError: integer_validator() takes 3 positional arguments but 4 were given
-
 Checking for non-integer types:
 	  >>> b.integer_validator("bool", True)
 	  Traceback (most recent call last):
@@ -110,3 +92,21 @@ Checking for non-integer types:
           Traceback (most recent call last):
           ...
           TypeError: bytearrays must be an integer
+
+Checking for no arguments to integer_validator:
+	  >>> b.integer_validator()
+	  Traceback (most recent call last):
+          ...
+	  TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Checking for only 1 argument to integer_validator:
+	  >>> b.integer_validator("integer")
+	  Traceback (most recent call last):
+          ...
+	  TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Checking for too many arguments:
+	  >>> b.integer_validator("integer", 1, 2)
+	  Traceback (most recent call last):
+          ...
+	  TypeError: integer_validator() takes 3 positional arguments but 4 were given
