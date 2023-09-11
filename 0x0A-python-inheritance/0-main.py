@@ -1,14 +1,23 @@
 #!/usr/bin/python3
-lookup = __import__('0-lookup').lookup
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-class MyClass1(object):
-    pass
+bg = BaseGeometry()
 
-class MyClass2(object):
-    my_attr1 = 3
-    def my_meth(self):
-        pass
+bg.integer_validator("my_int", 12)
+bg.integer_validator("width", 89)
 
-print(lookup(MyClass1))
-print(lookup(MyClass2))
-print(lookup(int))
+try:
+    bg.integer_validator("name", "John")
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
+
+try:
+    bg.integer_validator("age", 0)
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
+
+try:
+    bg.integer_validator("distance", -4)
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
+    
