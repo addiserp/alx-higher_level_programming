@@ -18,7 +18,11 @@ else:
         my_list.append(sys.argv[i + 1])
 
 if path.isfile(filename):
+    """path checker if it exists"""
+
     curr_list = load_from_json_file(filename)
     save_to_json_file(curr_list + my_list, filename)
+
 else:
+    """path checker if it does not exists"""
     save_to_json_file(my_list, filename)
