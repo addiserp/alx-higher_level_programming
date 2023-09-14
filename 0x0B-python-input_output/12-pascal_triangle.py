@@ -5,9 +5,11 @@ of integers representing the Pascal’s triangle of n
 
 
 def pascal_triangle(n):
-    pas = []
+    """ a function representing the Pascal’s triangle of n"""
+
+    tria = []
     if n <= 0:
-        return pas
+        return tria
     tria = [[1]]
     while len(tria) != n:
         tri = tria[-1]
