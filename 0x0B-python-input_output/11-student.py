@@ -24,7 +24,7 @@ class Student:
                 all(type(ele) == str for ele in ats)):
             return {k: getattr(self, k) for k in ats if hasattr(self, k)}
         return self.__dict__
-    
+
     def reload_from_json(self, json):
         """ function script for reload_from_json"""
 
