@@ -8,11 +8,6 @@ class Rectangle(Base):
     """ The first class REctangle inherits from Base
     """
 
-    __width = 0
-    __height = 0
-    __x = 0
-    __y = 0
-
     def __init__(self, width, height, x=0, y=0, id=None):
         """initialize the new class"""
 
@@ -113,3 +108,11 @@ class Rectangle(Base):
         for i in range(self.height):
             rectangle += (" " * self.x) + ("#"*self.width) + "\n"
         print(rectangle, end="")
+
+    def __str__(self) -> str:
+        """presents a diagram of the square defined for an object"""
+
+        name = str(self.__class__.__name__)
+        printstr = "[{}] ({}) {}/{} - {}/{}"
+        return printstr.format(name, self.id,
+                               self.__x, self.__y, self.__width, self.__height)
