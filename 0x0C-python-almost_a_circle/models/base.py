@@ -47,3 +47,11 @@ class Base:
                 list_objs = [o.to_dictionary() for o in list_objs]
                 j = cls.to_json_string(list_objs)
             myfile.write(j)
+
+    def from_json_string(json_string):
+        """Load json to dictionary format"""
+
+        if json_string is None:
+            return "[]"
+        else:
+            return json.loads(json_string)
