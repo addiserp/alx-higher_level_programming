@@ -72,3 +72,15 @@ class Base:
 
             instaclass.update(**dictionary)
             return instaclass
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances:"""
+
+        filename = str(cls.__name__) + ".json"
+        try:
+            with open(filename, "r") as myfile:
+                list_dicts = Base.from_json_string(myfile.read())
+                return [cls.create(**d) for d in list_dicts]
+        except IOError:
+            return []
