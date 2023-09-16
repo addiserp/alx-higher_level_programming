@@ -43,6 +43,7 @@ class Square(Rectangle):
                 raise ValueError("size must be > 0")
         self.__height = value
         self.__width = value
+
     def __str__(self) -> str:
         """presents a diagram of the square defined for an object"""
 
@@ -50,3 +51,21 @@ class Square(Rectangle):
         printstr = "[{}] ({}) {}/{} - {}"
         return printstr.format(name, self.id,
                                self.__x, self.__y, self.__width)
+
+    def update(self, *args, **kwargs):
+        """updates the square instance"""
+
+        if len(args) == 0:
+            for key, val in kwargs.items():
+                self.__setattr__(key, val)
+            return
+
+        strcont = len(args) - 1
+        if strcont >= 0:
+            self.id = args[0]
+        if strcont >= 1:
+            self.size = args[1]
+        if strcont >= 2:
+            self.x = args[2]
+        if strcont >= 3:
+            self.y = args[3]
