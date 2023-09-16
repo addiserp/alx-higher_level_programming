@@ -2,6 +2,7 @@
 """ My class Rectangle module
 """
 from models.base import Base
+import sys
 
 
 class Rectangle(Base):
@@ -116,3 +117,18 @@ class Rectangle(Base):
         printstr = "[{}] ({}) {}/{} - {}/{}"
         return printstr.format(name, self.id,
                                self.__x, self.__y, self.__width, self.__height)
+
+    def update(self, *args):
+        """updates the rectangel instance"""
+
+        strcont = len(args) - 1
+        if strcont >= 0:
+            self.id = args[0]
+        if strcont >= 1:
+            self.width = args[1]
+        if strcont >= 2:
+            self.height = args[2]
+        if strcont >= 3:
+            self.x = args[3]
+        if strcont >= 4:
+            self.y = args[4]
