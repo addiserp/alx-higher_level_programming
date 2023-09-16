@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ My class Base module
 """
-
+import json
 
 class Base:
     """ The first class Base
@@ -21,4 +21,16 @@ class Base:
             self.id = self.__nb_objects
 
     def __str__(self):
+        """ formats string reparezantation"""
+
         return "[Base] {} - {:d}".format(self.id)
+
+    def to_json_string(list_dictionaries):
+        """returns the JSON string representation
+        of list_dictionaries:"""
+
+        if list_dictionaries is None:
+            return "[]"
+
+        return json.dumps(list_dictionaries)
+    
