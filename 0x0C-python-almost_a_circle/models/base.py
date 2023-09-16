@@ -3,6 +3,7 @@
 """
 import json
 
+
 class Base:
     """ The first class Base
     """
@@ -33,4 +34,16 @@ class Base:
             return "[]"
 
         return json.dumps(list_dictionaries)
-    
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """Save json to a file """
+
+        filename = str(cls.__name__) + ".json"
+        with open(filename, mode="w", encoding="utf-8") as myfile:
+            if list_objs is None:
+                j = ""
+            else:
+                list_objs = [o.to_dictionary() for o in list_objs]
+                j = cls.to_json_string(list_objs)
+            myfile.write(j)

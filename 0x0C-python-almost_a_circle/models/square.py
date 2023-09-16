@@ -20,7 +20,7 @@ class Square(Rectangle):
         """
 
         super().__init__(size, size, x, y, id)
- 
+
         self.integer_validator("size", size)
         self.__width = size
         self.__height = size
