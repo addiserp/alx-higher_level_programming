@@ -26,3 +26,27 @@ class Square(Rectangle):
         self.__x = super().x
         self.integer_validator2("y", y)
         self.__y = super().y
+
+    @property
+    def size(self):
+        """Gets value of size"""
+        return self.__width
+
+    @size.setter
+    def size(self, value):
+        """assign a value size"""
+
+        if self.__width == self.__height:
+            if not isinstance(value, int):
+                raise TypeError("size must be an integer")
+            if value < 0:
+                raise ValueError("size must be > 0")
+        self.__height = value
+        self.__width = value
+    def __str__(self) -> str:
+        """presents a diagram of the square defined for an object"""
+
+        name = str(self.__class__.__name__)
+        printstr = "[{}] ({}) {}/{} - {}"
+        return printstr.format(name, self.id,
+                               self.__x, self.__y, self.__width)

@@ -111,7 +111,7 @@ class Rectangle(Base):
         print(rectangle, end="")
 
     def __str__(self) -> str:
-        """presents a diagram of the square defined for an object"""
+        """presents a diagram of the Rectangle defined for an object"""
 
         name = str(self.__class__.__name__)
         printstr = "[{}] ({}) {}/{} - {}/{}"
