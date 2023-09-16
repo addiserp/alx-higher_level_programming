@@ -137,3 +137,12 @@ class Rectangle(Base):
             self.x = args[3]
         if strcont >= 4:
             self.y = args[4]
+
+    def to_dictionary(self):
+        """Dictionary representation of the class rectangel"""
+
+        return {'id': getattr(self, "id"),
+                'width': getattr(self, "width"),
+                'height': getattr(self, "height"),
+                'x': getattr(self, "x"),
+                'y': getattr(self, "y")}
