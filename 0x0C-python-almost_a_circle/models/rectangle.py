@@ -20,13 +20,13 @@ class Rectangle(Base):
         """
         super().__init__(id)
         self.integer_validator("width", width)
-        self.__width = width
+        self.width = width
         self.integer_validator("height", height)
-        self.__height = height
-        self.integer_validator2("x", x)
-        self.__x = x
-        self.integer_validator2("y", y)
-        self.__y = y
+        self.height = height
+        # self.integer_validator2("x", x)
+        self.x = x
+        # self.integer_validator2("y", y)
+        self.y = y
 
     @property
     def width(self):
@@ -66,21 +66,21 @@ class Rectangle(Base):
         """sets x attribute"""
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
-        if value <= 0:
+        if value < 0:
             raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
     def y(self):
         """retrieves x attribute"""
-        return self.__x
+        return self.__y
 
     @y.setter
     def y(self, value):
         """sets y attribute"""
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
-        if value <= 0:
+        if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
 
@@ -110,7 +110,7 @@ class Rectangle(Base):
             rectangle += (" " * self.x) + ("#"*self.width) + "\n"
         print(rectangle, end="")
 
-    def __str__(self) -> str:
+    def __str__(self):
         """presents a diagram of the Rectangle defined for an object"""
 
         name = str(self.__class__.__name__)
@@ -141,8 +141,8 @@ class Rectangle(Base):
     def to_dictionary(self):
         """Dictionary representation of the class rectangel"""
 
-        return {'id': getattr(self, "id"),
-                'width': getattr(self, "width"),
+        return {'x': getattr(self, "x"),
+                'y': getattr(self, "y"),
+                'id': getattr(self, "id"),
                 'height': getattr(self, "height"),
-                'x': getattr(self, "x"),
-                'y': getattr(self, "y")}
+                'width': getattr(self, "width")}

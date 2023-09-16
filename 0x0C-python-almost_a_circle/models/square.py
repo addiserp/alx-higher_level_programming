@@ -18,14 +18,16 @@ class Square(Rectangle):
                 x (int): The x of the new square.
                 y (int): The y of the new square.
         """
+
         super().__init__(size, size, x, y, id)
+ 
         self.integer_validator("size", size)
         self.__width = size
         self.__height = size
         self.integer_validator2("x", x)
-        self.__x = super().x
+        self.__x = x
         self.integer_validator2("y", y)
-        self.__y = super().y
+        self.__y = y
 
     @property
     def size(self):
@@ -36,13 +38,13 @@ class Square(Rectangle):
     def size(self, value):
         """assign a value size"""
 
-        if self.__width == self.__height:
+        if self.width == self.height:
             if not isinstance(value, int):
                 raise TypeError("size must be an integer")
             if value < 0:
                 raise ValueError("size must be > 0")
-        self.__height = value
-        self.__width = value
+        self.height = value
+        self.width = value
 
     def __str__(self) -> str:
         """presents a diagram of the square defined for an object"""
@@ -50,7 +52,7 @@ class Square(Rectangle):
         name = str(self.__class__.__name__)
         printstr = "[{}] ({}) {}/{} - {}"
         return printstr.format(name, self.id,
-                               self.__x, self.__y, self.__width)
+                               self.x, self.y, self.width)
 
     def update(self, *args, **kwargs):
         """updates the square instance"""
@@ -69,3 +71,11 @@ class Square(Rectangle):
             self.x = args[2]
         if strcont >= 3:
             self.y = args[3]
+
+    def to_dictionary(self):
+        """Dictionary representation of the class Square"""
+
+        return {'id': getattr(self, "id"),
+                'x': getattr(self, "x"),
+                'size': getattr(self, "width"),
+                'y': getattr(self, "y")}
