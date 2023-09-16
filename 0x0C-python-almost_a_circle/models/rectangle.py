@@ -118,10 +118,15 @@ class Rectangle(Base):
         return printstr.format(name, self.id,
                                self.__x, self.__y, self.__width, self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """updates the rectangel instance"""
 
-        strcont = len(args) - 1
+        if len(args) == 0:
+            for key, val in kwargs.items():
+                self.__setattr__(key, val)
+            return
+
+        strcont = len(args)
         if strcont >= 0:
             self.id = args[0]
         if strcont >= 1:
