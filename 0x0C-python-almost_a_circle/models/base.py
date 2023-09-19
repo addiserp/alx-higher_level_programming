@@ -53,8 +53,8 @@ class Base:
     def from_json_string(json_string):
         """Load json to dictionary format"""
 
-        if json_string is None or json_string == "[]":
-            return "[]"
+        if json_string is None:
+            return ""
         else:
             return json.loads(json_string)
 
