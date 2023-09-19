@@ -37,7 +37,6 @@ class Square(Rectangle):
     @size.setter
     def size(self, value):
         """assign a value size"""
-
         self.integer_validator("size", value)
         self.width = value
         self.height = value
@@ -49,6 +48,13 @@ class Square(Rectangle):
         printstr = "[{}] ({}) {}/{} - {}"
         return printstr.format(name, self.id,
                                self.x, self.y, self.width)
+
+    def integer_validator(self, name, value):
+        """validates value"""
+        if not isinstance(self, int):
+            raise TypeError("{} must be an integer".format(name))
+        if value <= 0:
+            raise ValueError("{} must be > 0".format(name))
 
     def update(self, *args, **kwargs):
         """updates the square instance"""
