@@ -1,55 +1,31 @@
 #!/usr/bin/python3
 """ Check """
-from models.square import Square
+from models.rectangle import Rectangle
+import os
+import json
 
-s = Square(5)
 
-try:
-    s.size = "12"
-    print("TypeError exception not raised")
+file_path = "Rectangle.json"
+if os.path.exists(file_path):
+    os.remove(file_path)
+
+list_objs = None
+expected_list = []
+Rectangle.save_to_file(list_objs)
+
+if not os.path.exists(file_path):
+    print("save_to_file doesn't create a file {}".format(file_path))
     exit(1)
-except TypeError as e:
-    if str(e) != "width must be an integer":
-        print("Wrong exception message: {}".format(e))
+
+with open(file_path, "r") as file:
+    list_json = json.load(file)
+
+    if list_json is None:
+        print("Can't parse {} file".format(file_path))
         exit(1)
-except Exception as e:
-    print("Wrong exception: [{}] {}".format(type(e), e))
-    exit(1)
-
-try:
-    s.size = [13]
-    print("TypeError exception not raised")
-    exit(1)
-except TypeError as e:
-    if str(e) != "width must be an integer":
-        print("Wrong exception message: {}".format(e))
+    
+    if expected_list != list_json:
+        print("Wrong serialization: {} instead of {}".format(list_json, expected_list))
         exit(1)
-except Exception as e:
-    print("Wrong exception: [{}] {}".format(type(e), e))
-    exit(1)
-
-try:
-    s.size = 13.12
-    print("TypeError exception not raised")
-    exit(1)
-except TypeError as e:
-    if str(e) != "width must be an integer":
-        print("Wrong exception message: {}".format(e))
-        exit(1)
-except Exception as e:
-    print("Wrong exception: [{}] {}".format(type(e), e))
-    exit(1)
-
-try:
-    s.size = { 'id': 12 }
-    print("TypeError exception not raised")
-    exit(1)
-except TypeError as e:
-    if str(e) != "width must be an integer":
-        print("Wrong exception message: {}".format(e))
-        exit(1)
-except Exception as e:
-    print("Wrong exception: [{}] {}".format(type(e), e))
-    exit(1)
 
 print("OK", end="")
