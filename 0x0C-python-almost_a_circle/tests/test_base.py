@@ -22,89 +22,139 @@ class TestBase_instantiation(unittest.TestCase):
     """Below are a unittests for testing instantiation of the Base class."""
 
     def test_three_bases(self):
+        """Below are a unittests for testing test_three_bases"""
+
         b1 = Base()
         b2 = Base()
         b3 = Base()
         self.assertEqual(b1.id, b3.id - 2)
 
     def test_no_arg(self):
+        """Below are a unittests for testing test_no_arg(self)"""
+
         b1 = Base()
         b2 = Base()
         self.assertEqual(b1.id, b2.id - 1)
 
     def test_unique_id(self):
+        """Below are a unittests for test_unique_id"""
+
         self.assertEqual(12, Base(12).id)
 
     def test_None_id(self):
+        """Below are a unittests for test_None_id"""
+
         b1 = Base(None)
         b2 = Base(None)
         self.assertEqual(b1.id, b2.id - 1)
 
     def test_id_public(self):
+        """Below are a unittests for test_id_public"""
+
         b = Base(12)
         b.id = 15
         self.assertEqual(15, b.id)
-      
+
     def test_nb_instances_after_unique_id(self):
+        """Below are a unittests for
+        test_nb_instances_after_unique_id"""
+
         b1 = Base()
         b2 = Base(12)
         b3 = Base()
         self.assertEqual(b1.id, b3.id - 1)
 
     def test_nb_instances_private(self):
+        """Below are a unittests for
+        test_nb_instances_private"""
+
         with self.assertRaises(AttributeError):
             print(Base(12).__nb_instances)
 
     def test_str_id(self):
+        """Below are a unittests for test_str_id"""
+
         self.assertEqual("hello", Base("hello").id)
 
     def test_float_id(self):
+        """Below are a unittests for test_float_id"""
+
         self.assertEqual(5.5, Base(5.5).id)
 
     def test_dict_id(self):
+        """Below are a unittests for test_dict_id"""
+
         self.assertEqual({"a": 1, "b": 2}, Base({"a": 1, "b": 2}).id)
 
     def test_complex_id(self):
+        """Below are a unittests for test_complex_id"""
+
         self.assertEqual(complex(5), Base(complex(5)).id)
 
     def test_bool_id(self):
+        """Below are a unittests for test_bool_id"""
+
         self.assertEqual(True, Base(True).id)
 
     def test_list_id(self):
+        """Below are a unittests for test_list_id"""
+
         self.assertEqual([1, 2, 3], Base([1, 2, 3]).id)
 
     def test_tuple_id(self):
+        """Below are a unittests for test_tuple_id"""
+
         self.assertEqual((1, 2), Base((1, 2)).id)
 
     def test_set_id(self):
+        """Below are a unittests for test_set_id"""
+
         self.assertEqual({1, 2, 3}, Base({1, 2, 3}).id)
 
     def test_frozenset_id(self):
-        self.assertEqual(frozenset({1, 2, 3}), Base(frozenset({1, 2, 3})).id)
+        """Below are a unittests for test_frozenset_id"""
+
+        self.assertEqual(frozenset({1, 2, 3}),
+                         Base(frozenset({1, 2, 3})).id)
 
     def test_range_id(self):
+        """Below are a unittests for test_range_id"""
+
         self.assertEqual(range(5), Base(range(5)).id)
 
     def test_bytes_id(self):
+        """Below are a unittests for test_bytes_id"""
+
         self.assertEqual(b'Python', Base(b'Python').id)
+
     def test_memoryview_id(self):
+        """Below are a unittests for test_memoryview_id"""
+
         self.assertEqual(memoryview(b'abcefg'), Base(memoryview(b'abcefg')).id)
 
     def test_inf_id(self):
+        """Below are a unittests for test_inf_id"""
+
         self.assertEqual(float('inf'), Base(float('inf')).id)
 
     def test_bytearray_id(self):
+        """Below are a unittests for test_bytearray_id"""
+
         self.assertEqual(bytearray(b'abcefg'), Base(bytearray(b'abcefg')).id)
 
     def test_NaN_id(self):
+        """Below are a unittests for test_NaN_id"""
+
         self.assertNotEqual(float('nan'), Base(float('nan')).id)
 
     def test_two_args(self):
         with self.assertRaises(TypeError):
             Base(1, 2)
 
+
 class TestBase_to_json_string(unittest.TestCase):
-    """ for testing Below are a unittests to_json_string method of Base class."""
+    """ for testing Below are a unittests
+     to_json_string method of Base class."""
 
     def test_to_json_string_rectangle_type(self):
         x = Rectangle(10, 7, 2, 8, 6)
@@ -148,8 +198,10 @@ class TestBase_to_json_string(unittest.TestCase):
         with self.assertRaises(TypeError):
             Base.to_json_string([], 1)
 
+
 class TestBase_save_to_file(unittest.TestCase):
-    """Below are a unittests for testing save_to_file method of Base class."""
+    """Below are a unittests for
+    testing save_to_file method of Base class."""
 
     @classmethod
     def tearDown(self):
@@ -227,7 +279,8 @@ class TestBase_save_to_file(unittest.TestCase):
 
 
 class TestBase_from_json_string(unittest.TestCase):
-    """Below are a unittests for testing from_json_string method of Base class."""
+    """Below are a unittests for testing
+    from_json_string method of Base class."""
 
     def test_from_json_string_type(self):
         list_input = [{"id": 89, "width": 10, "height": 4}]
@@ -333,7 +386,8 @@ class TestBase_create(unittest.TestCase):
 
 
 class TestBase_load_from_file(unittest.TestCase):
-    """Below are a unittests for testing load_from_file_method of Base class."""
+    """Below are a unittests
+    for testing load_from_file_method of Base class."""
 
     @classmethod
     def tearDown(self):
@@ -366,7 +420,8 @@ class TestBase_load_from_file(unittest.TestCase):
         x2 = Rectangle(2, 4, 5, 6, 2)
         Rectangle.save_to_file([x1, x2])
         output = Rectangle.load_from_file()
-        self.assertTrue(all(type(obj) == Rectangle for obj in output))
+        self.assertTrue(
+            all(type(obj) is Rectangle for obj in output))
 
     def test_load_from_file_first_square(self):
         y1 = Square(5, 1, 3, 3)
@@ -387,7 +442,7 @@ class TestBase_load_from_file(unittest.TestCase):
         y2 = Square(9, 5, 2, 3)
         Square.save_to_file([y1, y2])
         output = Square.load_from_file()
-        self.assertTrue(all(type(obj) == Square for obj in output))
+        self.assertTrue(all(type(obj) is Square for obj in output))
 
     def test_load_from_file_no_file(self):
         output = Square.load_from_file()
@@ -399,7 +454,8 @@ class TestBase_load_from_file(unittest.TestCase):
 
 
 class TestBase_save_to_file_csv(unittest.TestCase):
-    """Below are a unittests for testing save_to_file_csv method of Base class."""
+    """Below are a unittests for testing
+    save_to_file_csv method of Base class."""
 
     @classmethod
     def tearDown(self):
@@ -477,7 +533,8 @@ class TestBase_save_to_file_csv(unittest.TestCase):
 
 
 class TestBase_load_from_file_csv(unittest.TestCase):
-    """Below are a unittests for testing load_from_file_csv method of Base class."""
+    """Below are a unittests for testing
+    method of Base class."""
 
     @classmethod
     def tearDown(self):
@@ -510,7 +567,7 @@ class TestBase_load_from_file_csv(unittest.TestCase):
         x2 = Rectangle(2, 4, 5, 6, 2)
         Rectangle.save_to_file_csv([x1, x2])
         output = Rectangle.load_from_file_csv()
-        self.assertTrue(all(type(obj) == Rectangle for obj in output))
+        self.assertTrue(all(type(obj) is Rectangle for obj in output))
 
     def test_load_from_file_csv_first_square(self):
         y1 = Square(5, 1, 3, 3)
@@ -531,7 +588,7 @@ class TestBase_load_from_file_csv(unittest.TestCase):
         y2 = Square(9, 5, 2, 3)
         Square.save_to_file_csv([y1, y2])
         output = Square.load_from_file_csv()
-        self.assertTrue(all(type(obj) == Square for obj in output))
+        self.assertTrue(all(type(obj) is Square for obj in output))
 
     def test_load_from_file_csv_no_file(self):
         output = Square.load_from_file_csv()
@@ -540,6 +597,7 @@ class TestBase_load_from_file_csv(unittest.TestCase):
     def test_load_from_file_csv_more_than_one_arg(self):
         with self.assertRaises(TypeError):
             Base.load_from_file_csv([], 1)
+
 
 if __name__ == "__main__":
     unittest.main()
