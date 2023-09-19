@@ -57,15 +57,18 @@ class Square(Rectangle):
                 self.__setattr__(key, val)
             return
 
-        strcont = len(args) - 1
-        if strcont >= 0:
-            self.id = args[0]
-        if strcont >= 1:
-            self.size = args[1]
-        if strcont >= 2:
-            self.x = args[2]
-        if strcont >= 3:
-            self.y = args[3]
+        try:
+            strcont = len(args) - 1
+            if strcont >= 0:
+                self.id = args[0]
+            if strcont >= 1:
+                self.size = args[1]
+            if strcont >= 2:
+                self.x = args[2]
+            if strcont >= 3:
+                self.y = args[3]
+        except IndexError:
+            pass
 
     def to_dictionary(self):
         """Dictionary representation of the class Square"""
