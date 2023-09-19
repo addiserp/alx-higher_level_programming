@@ -39,10 +39,7 @@ class Square(Rectangle):
         """assign a value size"""
 
         if self.width == self.height:
-            if not isinstance(value, int):
-                raise TypeError("size must be an integer")
-            if value < 0:
-                raise ValueError("size must be > 0")
+            self.integer_validator("size", value)
         self.height = value
         self.width = value
 
