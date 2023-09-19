@@ -36,10 +36,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """sets width attribute"""
-        if not isinstance(value, int):
-            raise TypeError("width must be an integer")
-        if value < 0:
-            raise ValueError("width must be > 0")
+        self.integer_validator("width", value)
         self.__width = value
 
     @property
@@ -50,10 +47,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """sets height attribute"""
-        if not isinstance(value, int):
-            raise TypeError("height must be an integer")
-        if value < 0:
-            raise ValueError("height must be > 0")
+        self.integer_validator("height", value)
         self.__height = value
 
     @property
@@ -89,7 +83,7 @@ class Rectangle(Base):
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
+            raise ValueError("{} must be > 0".format(name))
 
     def integer_validator2(self, name, value):
         """validates value for x & y"""
