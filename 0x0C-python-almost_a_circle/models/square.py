@@ -32,16 +32,15 @@ class Square(Rectangle):
     @property
     def size(self):
         """Gets value of size"""
-        return self.__width
+        return self.width
 
     @size.setter
     def size(self, value):
         """assign a value size"""
 
-        if self.width == self.height:
-            self.integer_validator("size", value)
-        self.height = value
+        self.integer_validator("size", value)
         self.width = value
+        self.height = value
 
     def __str__(self) -> str:
         """presents a diagram of the square defined for an object"""
