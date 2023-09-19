@@ -27,6 +27,7 @@ class Base:
 
         return "[Base] {} - {:d}".format(self.id)
 
+    @staticmethod
     def to_json_string(list_dictionaries):
         """returns the JSON string representation
         of list_dictionaries:"""
