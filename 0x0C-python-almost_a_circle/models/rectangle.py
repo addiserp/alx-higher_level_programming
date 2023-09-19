@@ -120,17 +120,20 @@ class Rectangle(Base):
                 self.__setattr__(key, val)
             return
 
-        strcont = len(args)
-        if strcont >= 0:
-            self.id = args[0]
-        if strcont >= 1:
-            self.width = args[1]
-        if strcont >= 2:
-            self.height = args[2]
-        if strcont >= 3:
-            self.x = args[3]
-        if strcont >= 4:
-            self.y = args[4]
+        try:
+            strcont = len(args)
+            if strcont >= 0:
+                self.id = args[0]
+            if strcont >= 1:
+                self.width = args[1]
+            if strcont >= 2:
+                self.height = args[2]
+            if strcont >= 3:
+                self.x = args[3]
+            if strcont >= 4:
+                self.y = args[4]
+        except IndexError:
+            pass
 
     def to_dictionary(self):
         """Dictionary representation of the class rectangel"""

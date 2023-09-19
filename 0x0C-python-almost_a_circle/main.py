@@ -2,40 +2,15 @@
 """ Check """
 from models.rectangle import Rectangle
 
-try:
-    Rectangle(-12, 13)
-    print("ValueError exception not raised")
-    exit(1)
-except ValueError as e:
-    if str(e) != "width must be > 0":
-        print("Wrong exception message: {}".format(e))
-        exit(1)
-except Exception as e:
-    print("Wrong exception: [{}] {}".format(type(e), e))
+r = Rectangle(10, 12)
+if r.id != 1:
+    print("ID must be equal to 1: {}".format(r.id))
     exit(1)
 
-try:
-    Rectangle(-89, 13)
-    print("ValueError exception not raised")
-    exit(1)
-except ValueError as e:
-    if str(e) != "width must be > 0":
-        print("Wrong exception message: {}".format(e))
-        exit(1)
-except Exception as e:
-    print("Wrong exception: [{}] {}".format(type(e), e))
-    exit(1)
+r.update(12)
 
-try:
-    Rectangle(0, 13)
-    print("ValueError exception not raised")
+if r.id != 12:
+    print("ID must be updated to 12: {}".format(r.id))
     exit(1)
-except ValueError as e:
-    if str(e) != "width must be > 0":
-        print("Wrong exception message: {}".format(e))
-        exit(1)
-except Exception as e:
-    print("Wrong exception: [{}] {}".format(type(e), e))
-    exit(1)
-
+    
 print("OK", end="")
