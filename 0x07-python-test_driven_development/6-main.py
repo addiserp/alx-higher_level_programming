@@ -1,5 +1,19 @@
 #!/usr/bin/python3
-max_integer = __import__('6-max_integer').max_integer
+class Base():
+    """ My base class """
 
-print(max_integer([1, 2, 3, 4]))
-print(max_integer([1, 3, 4, 2]))
+    __nb_instances = 0
+
+    def __init__(self):
+        Base.__nb_instances += 1
+        self.id = Base.__nb_instances
+
+class User(Base):
+    """ My User class """
+    pass
+
+b = Base()
+u = User()
+print(u.id)
+
+
