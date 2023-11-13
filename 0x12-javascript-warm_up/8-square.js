@@ -6,13 +6,12 @@ let j = 'x';
 
 if (process.argv[2] === undefined || isNaN(x)) {
   console.log('Missing size');
-} else {
-    while (i < x - 1) {
-        j+= 'x';
-        i++;
-    }
-    while (i > 0) {
-        console.log(j);
-        i--;
-    }
+}
+while (i < x - 1) {
+    j+= 'x';
+    i++;
+}
+while (i > 0) {
+    console.log(j);
+    i--;
 }
