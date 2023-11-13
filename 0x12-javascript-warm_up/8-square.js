@@ -9,11 +9,11 @@ if (process.argv[2] === undefined || isNaN(x)) {
 }
 
 while (i < x - 1) {
-j+= 'x';
-i++;
+  j += 'x';
+  i++;
 }
 
 while (i > 0) {
-console.log(j);
-i--;
+  console.log(j);
+  i--;
 }
