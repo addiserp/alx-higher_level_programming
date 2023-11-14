@@ -12,4 +12,8 @@ module.exports = class Square extends Rectangle {
   double () {
     super.double();
   }
+
+  print () {
+    super.print();
+  }
 };
