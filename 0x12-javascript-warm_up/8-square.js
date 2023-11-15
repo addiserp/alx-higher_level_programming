@@ -9,7 +9,7 @@ if (process.argv[2] === undefined || isNaN(x)) {
 }
 
 while (i < x - 1) {
-  j += 'x';
+  j += 'X';
   i++;
 }
 
