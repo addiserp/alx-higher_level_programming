@@ -1,4 +1,4 @@
-#!/home/ad/venv/bin/python3
+#!/usr/bin/python3
 """
 This script defines a City class
 to work with MySQLAlchemy ORM.
