@@ -1,16 +1,20 @@
 #!/usr/bin/python3
 '''
-    2. POST an email #0
+    a Python script that takes in a URL and an email,
+    sends a POST request to the passed URL with the email
+    as a parameter, and displays the body of the response
+    (decoded in utf-8)
 '''
 
-import urllib.request
-from sys import argv
+import urllib
+import sys
+
 
 if __name__ == "__main__":
 
-    values = {'email': argv[2]}
+    values = {'email': sys.argv[2]}
     MYD = urllib.parse.urlencode(values).encode('utf-8')
-    rurl = urllib.request.Request(argv[1], MYD)
+    rurl = urllib.request.Request(sys.argv[1], MYD)
 
     with urllib.request.urlopen(rurl) as response:
         html = response.read()
