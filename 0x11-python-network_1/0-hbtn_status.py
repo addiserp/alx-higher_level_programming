@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 # a Python script that fetches https://alx-intranet.hbtn.io/status
 
+import urllib.request
+
 
 if __name__ == "__main__":
-    import urllib.request
+    # to fetches https://alx-intranet.hbtn.io/status
 
     with urllib.request.urlopen('https://alx-intranet.hbtn.io/status')\
             as response:
