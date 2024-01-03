@@ -12,8 +12,8 @@ reque(URL, function (error, response, body) {
     const todo = JSON.parse(body);
     const list = {};
     for (let j = 0; j < todo.length; j++) {
-      const status = (todo[j]['completed']);
-      const k = todo[j]['userId'].toString();
+      const status = (todo[j].completed);
+      const k = todo[j].userId.toString();
       if (status) {
         if (list[k]) {
           list[k]++;
