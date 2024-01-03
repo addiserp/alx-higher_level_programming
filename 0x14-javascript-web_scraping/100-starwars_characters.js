@@ -5,7 +5,9 @@ const reque = require('request');
 const stfilm = process.argv[2];
 const url = `https://swapi-api.alx-tools.com/api/films/${stfilm}`;
 reque(url, (error, res, body) => {
-  if (!error) {
+    if (error) {
+        console.log('error:', error);
+      } else {
     const bodychars = JSON.parse(body).characters;
     bodychars.forEach((character) => {
       reque(character, function (error, res, body) {
