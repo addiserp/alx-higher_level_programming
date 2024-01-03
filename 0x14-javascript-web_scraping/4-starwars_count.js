@@ -10,7 +10,7 @@ reque(reqURL, function (error, response, body) {
     console.log('error:', error); // will print the error if one occurred
   } else {
     const jsonb = JSON.parse(body);
-    const output = jsonb['results'];
+    const output = jsonb.results;
     let tot = 0;
     for (let i = 0; i < output.length; i++) {
       const chars = (output[i]['characters']);
