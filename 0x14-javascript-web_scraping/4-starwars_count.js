@@ -13,7 +13,7 @@ reque(reqURL, function (error, response, body) {
     const output = jsonb.results;
     let tot = 0;
     for (let i = 0; i < output.length; i++) {
-      const chars = (output[i]['characters']);
+      const chars = (output[i].characters);
       for (let j = 0; j < chars.length; j++) {
         const chec = chars[j].endsWith('18/');
         if (chec) {
